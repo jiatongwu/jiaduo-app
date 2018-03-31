@@ -1,0 +1,58 @@
+{
+	"id": "725cb381-3e7f-4c17-a61f-43050746b2fb",
+	"name": "jiaduo",
+	"description": "jiaduo病虫害app",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"e0ac3fde-64d6-46a0-bb25-b9f8b2c5eeb2",
+		"5dfd40ae-c7c2-4098-a261-04364b07dcda"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "5dfd40ae-c7c2-4098-a261-04364b07dcda",
+			"name": "测报调查分类查询127.0.0.1:28080/cebaodiaochaCategory/save?name=name2",
+			"url": "127.0.0.1:28080/cebaodiaochaCategory/selectAll",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "e0ac3fde-64d6-46a0-bb25-b9f8b2c5eeb2",
+			"name": "新增一个测报调查分类127.0.0.1:28080/cebaodiaochaCategory/save?name=name2",
+			"url": "127.0.0.1:28080/cebaodiaochaCategory/save?name=name3",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "name3",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}

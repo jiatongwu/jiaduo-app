@@ -1,0 +1,43 @@
+spring: 
+  # 数据库配置
+  datasource:
+    url: "jdbc:mysql://localhost:3306/jiaduo?useUnicode=true&characterEncoding=UTF-8"
+    username: root
+    password: wujiatong
+    driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  http:
+    multipart:
+      # Max file size. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
+      max-file-size: 10MB
+      # Max request size. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
+      max-request-size: 50MB
+#  profiles:
+#    include: config
+  jpa:
+    show-sql: true
+    properties: 
+      hibernate:
+        format_sql: true
+
+# 返回json中不包括null的属性    
+  jackson:
+    default-property-inclusion: NON_NULL    
+# 配置http监听端口
+server:
+  port: 38080
+
+
+# mybatis 主配置文件
+# mybatis:
+#  config-location: classpath:mybatis/config/mybatis-config.xml
+
+# 日志级别
+logging:
+  level:
+    org: ERROR
+    com: ERROR
+    com.wt: DEBUG
