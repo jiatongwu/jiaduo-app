@@ -24,11 +24,11 @@ spring:
         format_sql: true
 
 # 返回json中不包括null的属性    
-  jackson:
-    default-property-inclusion: NON_NULL    
+#  jackson:
+#    default-property-inclusion: NON_NULL    
 # 配置http监听端口
 server:
-  port: 38080
+  port: 28080
 
 
 # mybatis 主配置文件

@@ -1,5 +1,5 @@
 package com.wt.jiaduo.dto;
-// Generated 2018-3-31 9:23:34 by Hibernate Tools 5.2.8.Final
+// Generated 2018-3-31 15:55:00 by Hibernate Tools 5.2.8.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -20,7 +20,6 @@ public class XiaomaiTiaoxiubingHouqi implements java.io.Serializable {
 
 	private Integer id;
 	private String place;
-	private String person;
 	private Date dateTime;
 	private String variety;
 	private String fieldNum;
@@ -45,13 +44,12 @@ public class XiaomaiTiaoxiubingHouqi implements java.io.Serializable {
 	public XiaomaiTiaoxiubingHouqi() {
 	}
 
-	public XiaomaiTiaoxiubingHouqi(String place, String person, Date dateTime, String variety, String fieldNum,
-			String growthPeriod, String typeField1Rate, String typeField1Severity, String typeField2Rate,
-			String typeField2Severity, String typeField3Rate, String typeField3Severity, String typeField4Rate,
-			String typeField4Severity, String typeField5Rate, String typeField5Severity, String typeAverageRate,
-			String typeAverageSeverity, Integer userId, String userName, String longitude, String latitude) {
+	public XiaomaiTiaoxiubingHouqi(String place, Date dateTime, String variety, String fieldNum, String growthPeriod,
+			String typeField1Rate, String typeField1Severity, String typeField2Rate, String typeField2Severity,
+			String typeField3Rate, String typeField3Severity, String typeField4Rate, String typeField4Severity,
+			String typeField5Rate, String typeField5Severity, String typeAverageRate, String typeAverageSeverity,
+			Integer userId, String userName, String longitude, String latitude) {
 		this.place = place;
-		this.person = person;
 		this.dateTime = dateTime;
 		this.variety = variety;
 		this.fieldNum = fieldNum;
@@ -93,15 +91,6 @@ public class XiaomaiTiaoxiubingHouqi implements java.io.Serializable {
 
 	public void setPlace(String place) {
 		this.place = place;
-	}
-
-	@Column(name = "person")
-	public String getPerson() {
-		return this.person;
-	}
-
-	public void setPerson(String person) {
-		this.person = person;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)

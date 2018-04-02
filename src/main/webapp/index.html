@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$.ajaxSetup({
+    //sheaders: { 'Authorization': localStorage.getItem('Authorization') },
+    beforeSend: function(xhr) {
+    	xhr.setRequestHeader("Authorization", localStorage.getItem('Authorization'));
+    },
+    complete: function(data, textStatus, request) {
+    	alert(data.getResponseHeader('replace-Authorization'));
+    	var s=data.getResponseHeader('replace-Authorization');
+    	if(typeof(s)!="undefined"&&s!=null) {
+    		localStorage.setItem('Authorization', s);	
+    	} 
+    }
+});
+function send(){
+	var a='2018-03-22 18:22:22';
+    $.ajax({  
+        url: "http://192.168.1.142:28080/xiaomaiTiaoxiubingZaoqi", 
+        type: 'POST', 
+        data: "dateTime="+a, 
+        success: function(data, textStatus, request){
+        	console.log(data);
+       }
+    });
+}
+
+</script>
+</head>
+<body>
+	<input type="button" value="test" onclick="send()" />
+</body>
+</html>

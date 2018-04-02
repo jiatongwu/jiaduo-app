@@ -1,5 +1,5 @@
 package com.wt.jiaduo.dto;
-// Generated 2018-3-31 9:23:34 by Hibernate Tools 5.2.8.Final
+// Generated 2018-3-31 15:55:00 by Hibernate Tools 5.2.8.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -21,7 +21,6 @@ public class XiaomaiBaifenbing implements java.io.Serializable {
 	private Integer id;
 	private Date dateTime;
 	private String place;
-	private String person;
 	private String varietyName;
 	private String sowingDate;
 	private String growthPeriod;
@@ -45,14 +44,13 @@ public class XiaomaiBaifenbing implements java.io.Serializable {
 	public XiaomaiBaifenbing() {
 	}
 
-	public XiaomaiBaifenbing(Date dateTime, String place, String person, String varietyName, String sowingDate,
-			String growthPeriod, String fieldArea, String checkArea, String numberofinvestigations,
-			String numberofdiseasedplants, String diseaseRate, String surveyBladenum, String onsetBladenum,
-			String diseasedLeafrate, String severity, String diseaseIndex, String diseasepointRate, Integer userId,
-			String userName, String longitude, String latitude, String remark) {
+	public XiaomaiBaifenbing(Date dateTime, String place, String varietyName, String sowingDate, String growthPeriod,
+			String fieldArea, String checkArea, String numberofinvestigations, String numberofdiseasedplants,
+			String diseaseRate, String surveyBladenum, String onsetBladenum, String diseasedLeafrate, String severity,
+			String diseaseIndex, String diseasepointRate, Integer userId, String userName, String longitude,
+			String latitude, String remark) {
 		this.dateTime = dateTime;
 		this.place = place;
-		this.person = person;
 		this.varietyName = varietyName;
 		this.sowingDate = sowingDate;
 		this.growthPeriod = growthPeriod;
@@ -103,15 +101,6 @@ public class XiaomaiBaifenbing implements java.io.Serializable {
 
 	public void setPlace(String place) {
 		this.place = place;
-	}
-
-	@Column(name = "person")
-	public String getPerson() {
-		return this.person;
-	}
-
-	public void setPerson(String person) {
-		this.person = person;
 	}
 
 	@Column(name = "variety_name")

@@ -1,5 +1,5 @@
 package com.wt.jiaduo.dto;
-// Generated 2018-3-31 9:23:34 by Hibernate Tools 5.2.8.Final
+// Generated 2018-3-31 15:55:00 by Hibernate Tools 5.2.8.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -20,7 +20,6 @@ public class XiaomaiCongaibingBingqingpucha implements java.io.Serializable {
 
 	private Integer id;
 	private Date dateTime;
-	private String person;
 	private String place;
 	private String zhongzhifangshi;
 	private String diaochamianji;
@@ -41,12 +40,11 @@ public class XiaomaiCongaibingBingqingpucha implements java.io.Serializable {
 	public XiaomaiCongaibingBingqingpucha() {
 	}
 
-	public XiaomaiCongaibingBingqingpucha(Date dateTime, String person, String place, String zhongzhifangshi,
-			String diaochamianji, String fabingmianji, String bingzhulv1, String bingzhulv1zhi3, String bingzhulv3zhi10,
+	public XiaomaiCongaibingBingqingpucha(Date dateTime, String place, String zhongzhifangshi, String diaochamianji,
+			String fabingmianji, String bingzhulv1, String bingzhulv1zhi3, String bingzhulv3zhi10,
 			String bingzhulv10zhi20, String bingzhulv20zhi50, String bingzhulv50, String huizhongmianji, String remark,
 			Integer userId, String userName, String longitude, String latitude) {
 		this.dateTime = dateTime;
-		this.person = person;
 		this.place = place;
 		this.zhongzhifangshi = zhongzhifangshi;
 		this.diaochamianji = diaochamianji;
@@ -85,15 +83,6 @@ public class XiaomaiCongaibingBingqingpucha implements java.io.Serializable {
 
 	public void setDateTime(Date dateTime) {
 		this.dateTime = dateTime;
-	}
-
-	@Column(name = "person")
-	public String getPerson() {
-		return this.person;
-	}
-
-	public void setPerson(String person) {
-		this.person = person;
 	}
 
 	@Column(name = "place")

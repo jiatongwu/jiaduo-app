@@ -1,5 +1,5 @@
 package com.wt.jiaduo.dto;
-// Generated 2018-3-31 9:23:34 by Hibernate Tools 5.2.8.Final
+// Generated 2018-3-31 15:55:00 by Hibernate Tools 5.2.8.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -21,7 +21,6 @@ public class XiaomaiSanheisuibing implements java.io.Serializable {
 	private Integer id;
 	private Date dateTime;
 	private String place;
-	private String person;
 	private String varietyName;
 	private String representativeArea;
 	private String surveyPointnum;
@@ -39,13 +38,12 @@ public class XiaomaiSanheisuibing implements java.io.Serializable {
 	public XiaomaiSanheisuibing() {
 	}
 
-	public XiaomaiSanheisuibing(Date dateTime, String place, String person, String varietyName,
-			String representativeArea, String surveyPointnum, String diseasePointnum, String diseasepointRate,
-			String surveyMaiyenum, String diseaseMaiyenum, String diseasemaiyeRate, String remark, Integer userId,
-			String userName, String longitude, String latitude) {
+	public XiaomaiSanheisuibing(Date dateTime, String place, String varietyName, String representativeArea,
+			String surveyPointnum, String diseasePointnum, String diseasepointRate, String surveyMaiyenum,
+			String diseaseMaiyenum, String diseasemaiyeRate, String remark, Integer userId, String userName,
+			String longitude, String latitude) {
 		this.dateTime = dateTime;
 		this.place = place;
-		this.person = person;
 		this.varietyName = varietyName;
 		this.representativeArea = representativeArea;
 		this.surveyPointnum = surveyPointnum;
@@ -90,15 +88,6 @@ public class XiaomaiSanheisuibing implements java.io.Serializable {
 
 	public void setPlace(String place) {
 		this.place = place;
-	}
-
-	@Column(name = "person")
-	public String getPerson() {
-		return this.person;
-	}
-
-	public void setPerson(String person) {
-		this.person = person;
 	}
 
 	@Column(name = "variety_name")

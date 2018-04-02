@@ -1,5 +1,5 @@
 package com.wt.jiaduo.dto;
-// Generated 2018-3-31 9:23:34 by Hibernate Tools 5.2.8.Final
+// Generated 2018-3-31 15:55:00 by Hibernate Tools 5.2.8.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -20,7 +20,6 @@ public class MalingshuWanyibingzhongxibingzhuxt implements java.io.Serializable 
 
 	private Integer id;
 	private String place;
-	private String person;
 	private Date dateTime;
 	private String pingzhong;
 	private String shengyuqi;
@@ -44,13 +43,11 @@ public class MalingshuWanyibingzhongxibingzhuxt implements java.io.Serializable 
 	public MalingshuWanyibingzhongxibingzhuxt() {
 	}
 
-	public MalingshuWanyibingzhongxibingzhuxt(String place, String person, Date dateTime, String pingzhong,
-			String shengyuqi, String diaochamianji, String fabingzhushu, String zhibeimidu, String bingzhulv,
-			String yangzhongdu0, String yangzhongdu1, String yangzhongdu3, String yangzhongdu5, String yangzhongdu7,
-			String yangzhongdu9, String bingqingzhishu, String remark, Integer userId, String userName,
-			String longitude, String latitude) {
+	public MalingshuWanyibingzhongxibingzhuxt(String place, Date dateTime, String pingzhong, String shengyuqi,
+			String diaochamianji, String fabingzhushu, String zhibeimidu, String bingzhulv, String yangzhongdu0,
+			String yangzhongdu1, String yangzhongdu3, String yangzhongdu5, String yangzhongdu7, String yangzhongdu9,
+			String bingqingzhishu, String remark, Integer userId, String userName, String longitude, String latitude) {
 		this.place = place;
-		this.person = person;
 		this.dateTime = dateTime;
 		this.pingzhong = pingzhong;
 		this.shengyuqi = shengyuqi;
@@ -91,15 +88,6 @@ public class MalingshuWanyibingzhongxibingzhuxt implements java.io.Serializable 
 
 	public void setPlace(String place) {
 		this.place = place;
-	}
-
-	@Column(name = "person")
-	public String getPerson() {
-		return this.person;
-	}
-
-	public void setPerson(String person) {
-		this.person = person;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
