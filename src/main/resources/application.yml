@@ -30,6 +30,8 @@ spring:
 server:
   port: 28080
 
+swagger-enable: true
+
 
 # mybatis 主配置文件
 # mybatis:
