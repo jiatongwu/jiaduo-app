@@ -12,7 +12,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.wt.jiaduo.dao.XiaomaiTiaoxiubingYuexiaDao;
-import com.wt.jiaduo.dto.XiaomaiTiaoxiubingYuexia;
+import com.wt.jiaduo.dto.jpa.XiaomaiTiaoxiubingYuexia;
 import com.wt.jiaduo.service.XiaomaiTiaoxiubingYuexiaService;
 import com.wt.jiaduo.utils.BeanUtilsUtil;
 

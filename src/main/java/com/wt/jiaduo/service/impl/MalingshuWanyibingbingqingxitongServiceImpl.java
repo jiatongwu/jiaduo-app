@@ -12,7 +12,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.wt.jiaduo.dao.MalingshuWanyibingbingqingxitongDao;
-import com.wt.jiaduo.dto.MalingshuWanyibingbingqingxitong;
+import com.wt.jiaduo.dto.jpa.MalingshuWanyibingbingqingxitong;
 import com.wt.jiaduo.service.MalingshuWanyibingbingqingxitongService;
 import com.wt.jiaduo.utils.BeanUtilsUtil;
 

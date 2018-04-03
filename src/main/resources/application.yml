@@ -1,7 +1,7 @@
 spring: 
   # 数据库配置
   datasource:
-    url: "jdbc:mysql://localhost:3306/jiaduo?useUnicode=true&characterEncoding=UTF-8"
+    url: "jdbc:mysql://localhost:3306/jiaduo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false"
     username: root
     password: wujiatong
     driver-class-name: com.mysql.jdbc.Driver
@@ -25,10 +25,19 @@ spring:
 
 # 返回json中不包括null的属性    
 #  jackson:
-#    default-property-inclusion: NON_NULL    
+#    default-property-inclusion: NON_NULL  
+
+
+   
 # 配置http监听端口
 server:
   port: 28080
+  servlet:
+    session:
+      tracking-modes: url
+management:
+  security:
+    enabled: false
 
 swagger-enable: true
 
@@ -41,5 +50,6 @@ swagger-enable: true
 logging:
   level:
     org: ERROR
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG  
     com: ERROR
     com.wt: DEBUG

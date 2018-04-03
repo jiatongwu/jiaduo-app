@@ -1,0 +1,96 @@
+package com.wt.jiaduo.utils.mybatisgenerator;
+
+public class TableNameGenerateMybatisGeneratorXML {
+	public static void main(String[] args) {
+
+		String[] arr = { "AREAS_SEQ",
+				"GP_CLOSE_ATTA_TYPE_SEQ",
+				"GP_CLOSE_MARJORREPO_SEQ",
+				"GP_CLOSE_PASTE_SEQ",
+				"GP_CLOSE_PUNIREPO_SEQ",
+				"GP_DECISION_APPROVAL_SEQ",
+				"GP_DECISION_DECI_SEQ",
+				"GP_EXE_MANDATORY_SEQ",
+				"GP_EXE_PENARECO_SEQ",
+				"GP_EXE_URGE_SEQ",
+				"GP_FILING_SEQ",
+				"GP_HEAR_PUNI_NOTI_SEQ",
+				"GP_HEAR_RECORD_SEQ",
+				"GP_HEAR_REPORT_SEQ",
+				"GP_NOTIFY_ORDER_CORR_SEQ",
+				"GP_NOTIFY_PUNI_NOTI_SEQ",
+				"GP_PEVI_CAILIAN_PUNI_SEQ",
+				"GP_PROD_SEQ",
+				"GP_PROG_SEQ",
+				"GP_PROOF_DISMI_DECI_PROD_SEQ",
+				"GP_PROOF_DISMI_DECI_SEQ",
+				"GP_PROOF_EVID_LIST_PROD_SEQ",
+				"GP_PROOF_EVID_LIST_SEQ",
+				"GP_PROOF_IMG_SEQ",
+				"GP_PROOF_INQUIRY_SEQ",
+				"GP_PROOF_POWEROFATTORNEY_SEQ",
+				"GP_PROOF_PROD_CALC_SEQ",
+				"GP_PROOF_PROD_CONFIR_PROD_SEQ",
+				"GP_PROOF_PROD_CONFIR_SEQ",
+				"GP_PROOF_REGI_NOTICE_SEQ",
+				"GP_PROOF_SAMPLING_PROD_SEQ",
+				"GP_PROOF_SAMPLING_SEQ",
+				"GP_PROOF_SEAL_DECI_PROD_SEQ",
+				"GP_PROOF_SEAL_DECI_SEQ",
+				"GP_PROOF_SEAL_RECORD_SEQ",
+				"GP_PROOF_SITERECORD_SEQ",
+				"GP_PROOF_TALK_NOTICE_SEQ",
+				"GP_REVIPROC_CASESTATE_SEQ",
+				"GP_REVIPROC_MAJOR_PUNIDISC_SEQ",
+				"GP_REVIPROC_PUNIDISC_SEQ",
+				"GP_ROLLING_PUNI_SEQ",
+				"GP_ROLLING_REMARK_SEQ",
+				"GP_ROLLING_TABLE_SEQ",
+				"GP_SERVICE_RECEIPT_INST_SEQ",
+				"GP_SERVICE_RECEIPT_SEQ",
+				"GP_SOURCE_SEQ",
+				"GP_TRANSFER_ATTA_SEQ",
+				"GP_TRANSFER_SEQ",
+				"INPUT_RECORD_SEQ",
+				"LAW_BEHAVIOR_CATEGORIES_SEQ",
+				"LAW_BEHAVIOR_EXTENTS_SEQ",
+				"LAW_BEHAVIORS_SEQ",
+				"LAWCHECKLIST_CATE_BEHA_SEQ",
+				"LAWCHECKLIST_CATE_CONT_SEQ",
+				"LAWCHECKLIST_CATE_SEQ",
+				"LAWCHECKLIST_PLACE_SEQ",
+				"LAWCHECKLIST_PROD_SEQ",
+				"LAWCHECKLIST_SEQ",
+				"MEASURE_UNIT_MONE_SEQ",
+				"MEASURE_UNIT_SPECI_SEQ",
+				"MEASUREMENT_UNIT_SEQ",
+				"PERMISSION_SEQ",
+				"PUNISHMENT_TYPE_SEQ",
+				"ROLE_PERMISSION_SEQ",
+				"ROLE_SEQ",
+				"RUN_MODES_SEQ",
+				"SIMPLE_PROGRAM_PRODUCT_SEQ",
+				"SIMPLE_PROGRAM_SEQ",
+				"SUPERVISE_RUN_MODE_SEQ",
+				"SUPERVISE_SUPERVISION_TYPE_SEQ",
+				"SUPERVISES_SEQ",
+				"SUPERVISION_TYPES_SEQ",
+				"TEST_SEQ",
+				"UNIT_SEQ",
+				"USER_CONF_CASES_SEQ",
+				"USER_ROLE_SEQ",
+				"USER_ZFTYPE_SEQ",
+				"USERS_SEQ",
+				"ZFTYPES_SEQ"
+
+
+		};
+		for (String ar : arr) {
+			String token = ar;
+			String xml = "<table tableName=\"%s\"> <property name=\"useActualColumnNames\" value=\"false\" /> <generatedKey column=\"id\" sqlStatement=\"SELECT %s.nextval AS id FROM DUAL\" />	</table>";
+			System.out.printf(xml, token.substring(0,token.length()-4), token);
+			System.out.println();
+		}
+	}
+
+}

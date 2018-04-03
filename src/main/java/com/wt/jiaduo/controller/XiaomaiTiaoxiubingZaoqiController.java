@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.apache.commons.lang3.StringUtils;
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.wt.jiaduo.controller.pojovalid.XiaomaiTiaoxiubingZaoqiAddValid;
 import com.wt.jiaduo.controller.pojovalid.XiaomaiTiaoxiubingZaoqiUpdateValid;
-import com.wt.jiaduo.dto.XiaomaiTiaoxiubingZaoqi;
+import com.wt.jiaduo.dto.jpa.XiaomaiTiaoxiubingZaoqi;
 import com.wt.jiaduo.service.XiaomaiTiaoxiubingZaoqiService;
 import com.wt.jiaduo.utils.Constants;
 
@@ -39,7 +40,7 @@ public class XiaomaiTiaoxiubingZaoqiController {
 	private XiaomaiTiaoxiubingZaoqiService xiaomaiTiaoxiubingZaoqiService;
 
 	@PostMapping("/xiaomaiTiaoxiubingZaoqi")
-	public Map<String, Object> saveOne(@Valid XiaomaiTiaoxiubingZaoqiAddValid xiaomaiTiaoxiubingZaoqi,
+	public Map<String, Object> saveOne(HttpServletRequest request,@Valid XiaomaiTiaoxiubingZaoqiAddValid xiaomaiTiaoxiubingZaoqi,
 			BindingResult bindingResult) {
 		Map<String, Object> result = new HashMap<String, Object>();
 		List<String> message = new ArrayList<String>();

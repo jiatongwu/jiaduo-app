@@ -2,7 +2,7 @@ package com.wt.jiaduo.service;
 
 import org.springframework.data.domain.Page;
 
-import com.wt.jiaduo.dto.SysPermission;
+import com.wt.jiaduo.dto.jpa.SysPermission;
 
 public interface SysPermissionService {
 	public Page<SysPermission> findAll(Integer pageNum,Integer pageSize);

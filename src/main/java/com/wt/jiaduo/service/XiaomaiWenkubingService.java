@@ -2,7 +2,7 @@ package com.wt.jiaduo.service;
 
 import org.springframework.data.domain.Page;
 
-import com.wt.jiaduo.dto.XiaomaiWenkubing;
+import com.wt.jiaduo.dto.jpa.XiaomaiWenkubing;
 
 public interface XiaomaiWenkubingService {
 	public Page<XiaomaiWenkubing> findAll(Integer pageNum,Integer pageSize);

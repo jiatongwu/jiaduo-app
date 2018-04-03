@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.wt.jiaduo.controller.pojovalid.XiaomaiCongaibingTianjianzishengmaimiaoAddValid;
 import com.wt.jiaduo.controller.pojovalid.XiaomaiCongaibingTianjianzishengmaimiaoUpdateValid;
-import com.wt.jiaduo.dto.XiaomaiCongaibingTianjianzishengmaimiao;
+import com.wt.jiaduo.dto.jpa.XiaomaiCongaibingTianjianzishengmaimiao;
 import com.wt.jiaduo.service.XiaomaiCongaibingTianjianzishengmaimiaoService;
 import com.wt.jiaduo.utils.Constants;
 

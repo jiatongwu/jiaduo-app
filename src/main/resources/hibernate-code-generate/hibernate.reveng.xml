@@ -2,29 +2,9 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-  <table-filter match-catalog="jiaduo" match-name="malingshu_wanyibingbingqingxitong"/>
-  <table-filter match-catalog="jiaduo" match-name="malingshu_wanyibingfabingqingkuang"/>
-  <table-filter match-catalog="jiaduo" match-name="malingshu_wanyibingzhongxibingzhuxt"/>
   <table-filter match-catalog="jiaduo" match-name="sys_permission"/>
   <table-filter match-catalog="jiaduo" match-name="sys_role"/>
   <table-filter match-catalog="jiaduo" match-name="sys_role_permission"/>
   <table-filter match-catalog="jiaduo" match-name="sys_user"/>
   <table-filter match-catalog="jiaduo" match-name="sys_user_role"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_baifenbing"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_chimeibing"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_congaibing_bingqingpucha"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_congaibing_huifeishichongkoumidu"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_congaibing_huifeishizirandaidulv"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_congaibing_tianjianzishengmaimiao"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_congaibing_youcepufabinglv"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_maizhizhudatian"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_sanheisuibing"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_tiaoxiubing_houqi"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_tiaoxiubing_yuexia"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_tiaoxiubing_zaoqi"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_wenkubing"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_xijiangchongbosui"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_xijiangchongtaotu"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_yachong_datian"/>
-  <table-filter match-catalog="jiaduo" match-name="xiaomai_yexiubing"/>
 </hibernate-reverse-engineering>

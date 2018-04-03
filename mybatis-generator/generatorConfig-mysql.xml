@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- 根据表 自动生成实体类和Mapper #java -cp ./mysql-connector-java-5.1.44.jar:./mybatis-generator-core-1.3.6.jar 	org.mybatis.generator.api.ShellRunner -configfile generatorConfig.xml -overwrite -->
+<generatorConfiguration>
+
+
+	<context id="mysql" targetRuntime="MyBatis3">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/jiaduo?useUnicode=yes&amp;characterEncoding=UTF-8&amp;useSSL=false"
+			userId="root" password="wujiatong">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.wt.jiaduo.dto.mybatis"
+			targetProject="/Users/wu/eclipse-workspace/jiaduo/src/main/java/">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.wt.jiaduo.mapper"
+			targetProject="/Users/wu/eclipse-workspace/jiaduo/src/main/java/">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.wt.jiaduo.mapper" targetProject="/Users/wu/eclipse-workspace/jiaduo/src/main/java/">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+		
+		
+		<table schema="jiaduo" tableName="sys_user">
+			<property name="useActualColumnNames" value="false" />
+			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+		</table>
+		
+
+	</context>
+</generatorConfiguration>

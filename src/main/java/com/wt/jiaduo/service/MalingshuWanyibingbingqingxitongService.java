@@ -2,7 +2,7 @@ package com.wt.jiaduo.service;
 
 import org.springframework.data.domain.Page;
 
-import com.wt.jiaduo.dto.MalingshuWanyibingbingqingxitong;
+import com.wt.jiaduo.dto.jpa.MalingshuWanyibingbingqingxitong;
 
 public interface MalingshuWanyibingbingqingxitongService {
 	public Page<MalingshuWanyibingbingqingxitong> findAll(Integer pageNum,Integer pageSize);
