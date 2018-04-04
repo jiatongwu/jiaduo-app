@@ -32,6 +32,25 @@ public class MalingshuWanyibingbingqingxitongAddValid implements java.io.Seriali
 	private Integer userId;
 	private String longitude;
 	private String latitude;
+	private Integer pinzhongId;
+	private Integer shengyuqiId;
+	
+	
+	public Integer getPinzhongId() {
+		return pinzhongId;
+	}
+
+	public void setPinzhongId(Integer pinzhongId) {
+		this.pinzhongId = pinzhongId;
+	}
+
+	public Integer getShengyuqiId() {
+		return shengyuqiId;
+	}
+
+	public void setShengyuqiId(Integer shengyuqiId) {
+		this.shengyuqiId = shengyuqiId;
+	}
 
 	public MalingshuWanyibingbingqingxitongAddValid() {
 	}
@@ -40,7 +59,8 @@ public class MalingshuWanyibingbingqingxitongAddValid implements java.io.Seriali
 			String tiankuaileixing, String shengyuqi, String diaochazhushu, String fabingzhushu, String bingzhulv,
 			String yangzhongdu0, String yangzhongdu1, String yangzhongdu3, String yangzhongdu5, String yangzhongdu7,
 			String yangzhongdu9, String bingqingzhishu, String remark, String userName, Integer userId,
-			String longitude, String latitude) {
+			String longitude, String latitude,
+			Integer pinzhongId, Integer shengyuqiId) {
 		this.place = place;
 		this.dateTime = dateTime;
 		this.pingzhong = pingzhong;
@@ -61,6 +81,8 @@ public class MalingshuWanyibingbingqingxitongAddValid implements java.io.Seriali
 		this.userId = userId;
 		this.longitude = longitude;
 		this.latitude = latitude;
+		this.pinzhongId = pinzhongId;
+		this.shengyuqiId = shengyuqiId;
 	}
 
 	

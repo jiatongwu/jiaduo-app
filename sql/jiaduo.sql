@@ -16,6 +16,54 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `malingshu_pinzhong`
+--
+
+DROP TABLE IF EXISTS `malingshu_pinzhong`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `malingshu_pinzhong` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `malingshu_pinzhong`
+--
+
+LOCK TABLES `malingshu_pinzhong` WRITE;
+/*!40000 ALTER TABLE `malingshu_pinzhong` DISABLE KEYS */;
+INSERT INTO `malingshu_pinzhong` VALUES (1,'东农303'),(2,'其他');
+/*!40000 ALTER TABLE `malingshu_pinzhong` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `malingshu_shengyuqi`
+--
+
+DROP TABLE IF EXISTS `malingshu_shengyuqi`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `malingshu_shengyuqi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `malingshu_shengyuqi`
+--
+
+LOCK TABLES `malingshu_shengyuqi` WRITE;
+/*!40000 ALTER TABLE `malingshu_shengyuqi` DISABLE KEYS */;
+INSERT INTO `malingshu_shengyuqi` VALUES (1,'幼苗期'),(2,'其他');
+/*!40000 ALTER TABLE `malingshu_shengyuqi` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `malingshu_wanyibingbingqingxitong`
 --
 
@@ -44,6 +92,8 @@ CREATE TABLE `malingshu_wanyibingbingqingxitong` (
   `user_id` int(11) DEFAULT NULL COMMENT '哪个用户创建的这条记录',
   `longitude` varchar(255) DEFAULT NULL COMMENT '经度',
   `latitude` varchar(255) DEFAULT NULL COMMENT '纬度',
+  `pinzhong_id` int(11) DEFAULT NULL,
+  `shengyuqi_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='马铃著晚疫病病情系统调查表';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -82,6 +132,8 @@ CREATE TABLE `malingshu_wanyibingfabingqingkuang` (
   `user_name` varchar(255) DEFAULT NULL COMMENT '调查人',
   `longitude` varchar(255) DEFAULT NULL COMMENT '经度',
   `latitude` varchar(255) DEFAULT NULL COMMENT '纬度',
+  `pinzhong_id` int(11) DEFAULT NULL,
+  `shengyuqi_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='马铃著晚疫病发病情况普查表';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -124,6 +176,8 @@ CREATE TABLE `malingshu_wanyibingzhongxibingzhuxt` (
   `user_name` varchar(255) DEFAULT NULL COMMENT '调查人',
   `longitude` varchar(255) DEFAULT NULL COMMENT '经度',
   `latitude` varchar(255) DEFAULT NULL COMMENT '纬度',
+  `pinzhong_id` int(11) DEFAULT NULL,
+  `shengyuqi_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='马铃著晚疫病中心病株系统调查表';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -153,9 +207,9 @@ CREATE TABLE `sys_permission` (
   `parentid` bigint(20) DEFAULT NULL COMMENT '父结点id',
   `parentids` varchar(128) DEFAULT NULL COMMENT '父结点id列表串',
   `sortstring` varchar(128) DEFAULT NULL COMMENT '排序号',
-  `available` char(1) DEFAULT NULL COMMENT '是否可用,1：可用，0不可用',
+  `available` int(2) DEFAULT NULL COMMENT '是否可用,1：可用，0不可用',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,6 +218,7 @@ CREATE TABLE `sys_permission` (
 
 LOCK TABLES `sys_permission` WRITE;
 /*!40000 ALTER TABLE `sys_permission` DISABLE KEYS */;
+INSERT INTO `sys_permission` VALUES (1,'permission1','menu','http://127.0.0.1/listuser','user:list',0,'0','1',1);
 /*!40000 ALTER TABLE `sys_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,9 +232,9 @@ DROP TABLE IF EXISTS `sys_role`;
 CREATE TABLE `sys_role` (
   `id` int(36) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
-  `available` char(1) DEFAULT NULL COMMENT '是否可用,1：可用，0不可用',
+  `available` int(2) DEFAULT NULL COMMENT '是否可用,1：可用，0不可用',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,6 +243,7 @@ CREATE TABLE `sys_role` (
 
 LOCK TABLES `sys_role` WRITE;
 /*!40000 ALTER TABLE `sys_role` DISABLE KEYS */;
+INSERT INTO `sys_role` VALUES (1,'admin',1),(2,'user',1),(3,'manager',1),(4,'m2',1);
 /*!40000 ALTER TABLE `sys_role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,8 +256,11 @@ DROP TABLE IF EXISTS `sys_role_permission`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sys_role_permission` (
   `sys_role_id` int(32) NOT NULL COMMENT '角色id',
-  `sys_permission_id` int(32) NOT NULL COMMENT '权限id'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `sys_permission_id` int(32) NOT NULL COMMENT '权限id',
+  `create_date` timestamp NULL DEFAULT NULL,
+  `id` int(32) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,6 +269,7 @@ CREATE TABLE `sys_role_permission` (
 
 LOCK TABLES `sys_role_permission` WRITE;
 /*!40000 ALTER TABLE `sys_role_permission` DISABLE KEYS */;
+INSERT INTO `sys_role_permission` VALUES (1,1,NULL,1);
 /*!40000 ALTER TABLE `sys_role_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -224,10 +284,10 @@ CREATE TABLE `sys_user` (
   `id` int(36) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `username` varchar(32) NOT NULL COMMENT '账号',
   `name` varchar(64) NOT NULL COMMENT '姓名',
-  `password` varchar(32) NOT NULL COMMENT '密码',
-  `locked` char(1) DEFAULT NULL COMMENT '账号是否锁定，1：锁定，0未锁定',
+  `password` varchar(32) NOT NULL COMMENT '密码md5值',
+  `locked` int(2) DEFAULT NULL COMMENT '账号是否锁定，1：锁定，0未锁定',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -236,6 +296,7 @@ CREATE TABLE `sys_user` (
 
 LOCK TABLES `sys_user` WRITE;
 /*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
+INSERT INTO `sys_user` VALUES (1,'admin','admin','e10adc3949ba59abbe56e057f20f883e',0);
 /*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,8 +309,11 @@ DROP TABLE IF EXISTS `sys_user_role`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sys_user_role` (
   `sys_user_id` int(12) NOT NULL,
-  `sys_role_id` int(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `sys_role_id` int(12) NOT NULL,
+  `create_date` timestamp NULL DEFAULT NULL,
+  `id` int(32) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,6 +322,7 @@ CREATE TABLE `sys_user_role` (
 
 LOCK TABLES `sys_user_role` WRITE;
 /*!40000 ALTER TABLE `sys_user_role` DISABLE KEYS */;
+INSERT INTO `sys_user_role` VALUES (1,1,NULL,1),(1,2,NULL,2),(1,3,NULL,3);
 /*!40000 ALTER TABLE `sys_user_role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -622,6 +687,7 @@ CREATE TABLE `xiaomai_tiaoxiubing_houqi` (
   `user_name` varchar(255) DEFAULT NULL COMMENT '调查人',
   `longitude` varchar(255) DEFAULT NULL COMMENT '经度',
   `latitude` varchar(255) DEFAULT NULL COMMENT '纬度',
+  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='小麦条锈病后期普查表';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -708,7 +774,7 @@ CREATE TABLE `xiaomai_tiaoxiubing_zaoqi` (
   `longitude` varchar(255) DEFAULT NULL COMMENT '经度',
   `latitude` varchar(255) DEFAULT NULL COMMENT '纬度',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='小麦条锈病早期普查表';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='小麦条锈病早期普查表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -717,7 +783,7 @@ CREATE TABLE `xiaomai_tiaoxiubing_zaoqi` (
 
 LOCK TABLES `xiaomai_tiaoxiubing_zaoqi` WRITE;
 /*!40000 ALTER TABLE `xiaomai_tiaoxiubing_zaoqi` DISABLE KEYS */;
-INSERT INTO `xiaomai_tiaoxiubing_zaoqi` VALUES (11,'2018-03-02 10:22:33','place12',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `xiaomai_tiaoxiubing_zaoqi` VALUES (11,'2018-03-02 10:22:33','place12',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(12,'2018-03-02 10:22:33',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(13,'2018-03-02 10:22:33',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(14,'2018-03-02 10:22:33',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(15,'2018-03-02 10:22:33',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(16,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,88,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `xiaomai_tiaoxiubing_zaoqi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -943,4 +1009,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-02 15:22:16
+-- Dump completed on 2018-04-04 16:27:49

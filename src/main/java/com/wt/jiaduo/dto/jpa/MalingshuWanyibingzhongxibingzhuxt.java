@@ -1,5 +1,5 @@
 package com.wt.jiaduo.dto.jpa;
-// Generated 2018-3-31 15:55:00 by Hibernate Tools 5.2.8.Final
+// Generated 2018-4-4 16:11:11 by Hibernate Tools 5.2.8.Final
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -39,6 +39,8 @@ public class MalingshuWanyibingzhongxibingzhuxt implements java.io.Serializable 
 	private String userName;
 	private String longitude;
 	private String latitude;
+	private Integer pinzhongId;
+	private Integer shengyuqiId;
 
 	public MalingshuWanyibingzhongxibingzhuxt() {
 	}
@@ -46,7 +48,8 @@ public class MalingshuWanyibingzhongxibingzhuxt implements java.io.Serializable 
 	public MalingshuWanyibingzhongxibingzhuxt(String place, Date dateTime, String pingzhong, String shengyuqi,
 			String diaochamianji, String fabingzhushu, String zhibeimidu, String bingzhulv, String yangzhongdu0,
 			String yangzhongdu1, String yangzhongdu3, String yangzhongdu5, String yangzhongdu7, String yangzhongdu9,
-			String bingqingzhishu, String remark, Integer userId, String userName, String longitude, String latitude) {
+			String bingqingzhishu, String remark, Integer userId, String userName, String longitude, String latitude,
+			Integer pinzhongId, Integer shengyuqiId) {
 		this.place = place;
 		this.dateTime = dateTime;
 		this.pingzhong = pingzhong;
@@ -67,6 +70,8 @@ public class MalingshuWanyibingzhongxibingzhuxt implements java.io.Serializable 
 		this.userName = userName;
 		this.longitude = longitude;
 		this.latitude = latitude;
+		this.pinzhongId = pinzhongId;
+		this.shengyuqiId = shengyuqiId;
 	}
 
 	@Id
@@ -260,6 +265,24 @@ public class MalingshuWanyibingzhongxibingzhuxt implements java.io.Serializable 
 
 	public void setLatitude(String latitude) {
 		this.latitude = latitude;
+	}
+
+	@Column(name = "pinzhong_id")
+	public Integer getPinzhongId() {
+		return this.pinzhongId;
+	}
+
+	public void setPinzhongId(Integer pinzhongId) {
+		this.pinzhongId = pinzhongId;
+	}
+
+	@Column(name = "shengyuqi_id")
+	public Integer getShengyuqiId() {
+		return this.shengyuqiId;
+	}
+
+	public void setShengyuqiId(Integer shengyuqiId) {
+		this.shengyuqiId = shengyuqiId;
 	}
 
 }

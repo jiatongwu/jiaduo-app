@@ -30,6 +30,24 @@ public class MalingshuWanyibingfabingqingkuangUpdateValid implements java.io.Ser
 	private String userName;
 	private String longitude;
 	private String latitude;
+	private Integer pinzhongId;
+	private Integer shengyuqiId;
+	public Integer getPinzhongId() {
+		return pinzhongId;
+	}
+
+	public void setPinzhongId(Integer pinzhongId) {
+		this.pinzhongId = pinzhongId;
+	}
+
+	public Integer getShengyuqiId() {
+		return shengyuqiId;
+	}
+
+	public void setShengyuqiId(Integer shengyuqiId) {
+		this.shengyuqiId = shengyuqiId;
+	}
+
 
 	public MalingshuWanyibingfabingqingkuangUpdateValid() {
 	}
@@ -37,7 +55,8 @@ public class MalingshuWanyibingfabingqingkuangUpdateValid implements java.io.Ser
 	public MalingshuWanyibingfabingqingkuangUpdateValid(String place,  Date dateTime, String pingzhong,
 			String tiankuaileixing, String shengyuqi, String diaochatiankuai, String fabingtiankuai, String bingtianlv,
 			String diaochazhushu, String fabingzhushu, String bingzhulv, String remark, Integer userId, String userName,
-			String longitude, String latitude) {
+			String longitude, String latitude,
+			Integer pinzhongId, Integer shengyuqiId) {
 		this.place = place;
 		this.dateTime = dateTime;
 		this.pingzhong = pingzhong;
@@ -54,6 +73,8 @@ public class MalingshuWanyibingfabingqingkuangUpdateValid implements java.io.Ser
 		this.userName = userName;
 		this.longitude = longitude;
 		this.latitude = latitude;
+		this.pinzhongId = pinzhongId;
+		this.shengyuqiId = shengyuqiId;
 	}
 
 	public Integer getId() {
